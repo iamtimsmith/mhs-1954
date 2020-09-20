@@ -34,6 +34,7 @@ const EmailPage = () => {
 		if (!user) setError(`You haven't added your information. You need to add this so the recipients know who sent it.`);
 		if (!user.name) setError(`You haven't added your name. You need to add this so the recipients know who sent it.`);
 		if (!user.email) setError(`You haven't added your email address. You need to add this so the recipients know who to reply to.`);
+		
 	}
 
 	return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const Section = styled.section`
@@ -27,8 +27,12 @@ const Email = styled.span`
 `;
 
 const IndexPage = () => {
-	const user = JSON.parse(localStorage.getItem(`user`));
-	const email = user.email || `**NO EMAIL HAS BEEN SET YET**`;
+	const [user, setUser] = useState(null);
+	useEffect(() => {
+		setUser(JSON.parse(localStorage.getItem(`user`)) || null)
+	}, []);
+	const email = user ? user.email : `**NO EMAIL HAS BEEN SET YET**`;
+
 	return (
 		<Section>
 			<Title>MHS 1954 Email Tool</Title>
