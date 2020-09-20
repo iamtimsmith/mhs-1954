@@ -32,7 +32,7 @@ const AddContact = () => {
 			setSuccess(``);
 			return setError(`You must enter a name and email before saving!`);
 		}
-		let contacts = JSON.parse(localStorage.getItem(`contacts`));
+		let contacts = JSON.parse(localStorage.getItem(`contacts`)) || [];
 		contacts.push({name, email});
 		setError(``);
 		setName(``);

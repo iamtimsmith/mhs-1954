@@ -1,5 +1,30 @@
+import nodemailer from 'nodemailer';
+
 module.exports = (req, res) => {
-	res.send({
-		message: `This email thing is working so far...`
-	})
+	const {contacts, user, subject, body} = req.body;
+	let recipients = ``;
+
+	for (let i=0; i < contacts.length; i++) {
+		recipients += i === 0 ? contacts[i].email : `, ${contacts[i].email}`;
+	}
+	
+	const transporter = nodemailer.createTransport({
+		service: process.env.MAIL_SERV,
+		auth: {
+			user: process.env.MAIL_USER,
+			pass: process.env.MAIL_PASS
+		}
+	});
+
+	const mailOptions = {
+		from: user.email,
+		to: recipients,
+		subject: subject,
+		text: body
+	};
+
+	transporter.sendMail(mailOptions, (error, info) => {
+		if (error) res.send({error});
+		res.send({success: `Your message was successfully sent!`});
+	});
 }

@@ -26,7 +26,7 @@ const EmailPage = () => {
 	const [success, setSuccess] = useState(``);
 	const [error, setError] = useState(``);
 
-	const handleSend = e => {
+	const handleSend = async e => {
 		e.preventDefault();
 		const contacts = JSON.parse(localStorage.getItem(`contacts`));
 		const user = JSON.parse(localStorage.getItem(`user`));
@@ -34,7 +34,16 @@ const EmailPage = () => {
 		if (!user) setError(`You haven't added your information. You need to add this so the recipients know who sent it.`);
 		if (!user.name) setError(`You haven't added your name. You need to add this so the recipients know who sent it.`);
 		if (!user.email) setError(`You haven't added your email address. You need to add this so the recipients know who to reply to.`);
-		
+		const req = await fetch(`/api/email`, {
+			method: 'post',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({contacts, user, subject, body})
+		});
+		const res = await req.json();
+		if ('error' in res) return setError(`There was an error sending your email. Please try again later.`);
+		setSubject(``);
+		setBody(``);
+		setSuccess(`Your email was sent!`);
 	}
 
 	return (
