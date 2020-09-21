@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 module.exports = (req, res) => {
-	const {contacts, user, subject, body} = req.body;
+	const {contacts, name, email, pass, subject, body} = req.body;
 	let recipients = ``;
 
 	for (let i=0; i < contacts.length; i++) {
@@ -9,15 +9,15 @@ module.exports = (req, res) => {
 	}
 	
 	const transporter = nodemailer.createTransport({
-		service: process.env.MAIL_SERV,
+		service: `gmail`,
 		auth: {
-			user: process.env.MAIL_USER,
-			pass: process.env.MAIL_PASS
+			user: email,
+			pass: pass
 		}
 	});
 
 	const mailOptions = {
-		from: user.email,
+		from: email,
 		to: recipients,
 		subject: subject,
 		text: body

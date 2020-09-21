@@ -12,11 +12,11 @@ const Header = () => {
 				<Link href='/profile'>
 					<a>Profile</a>
 				</Link>
-				<Link href='/contacts'>
-					<a>Contacts</a>
-				</Link>
 				<Link href='/add-contact'>
 					<a>Add Contact</a>
+				</Link>
+				<Link href='/contacts'>
+					<a>Contacts</a>
 				</Link>
 				<Link href='/email'>
 					<a>Email</a>
