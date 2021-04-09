@@ -5,4 +5,8 @@ export const Section = styled.footer`
 	padding: 50px 15px 15px;
 	font-size: 16px;
 	text-align: center;
+
+	@media print {
+		display: none;
+	}
 `;
