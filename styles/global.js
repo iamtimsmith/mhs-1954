@@ -1,5 +1,5 @@
-import {createGlobalStyle} from 'styled-components';
-import theme from './theme';
+import { createGlobalStyle } from "styled-components";
+import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -43,6 +43,9 @@ const GlobalStyle = createGlobalStyle`
 		height: 200px;
 		resize: none;
 		font-family: ${theme.sansSerif};
+	}
+	.ql-editor {
+		font-size: 18px;
 	}
 `;
 
