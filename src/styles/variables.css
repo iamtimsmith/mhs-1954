@@ -1,0 +1,9 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-accent: #800000;
+
+  --container-width: 750px;
+
+  --font-sans-serif: sans-serif;
+}

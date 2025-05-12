@@ -1,0 +1,22 @@
+.heart {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+.heart svg {
+  animation: pulse 1.25s linear infinite;
+  fill: var(--color-accent);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

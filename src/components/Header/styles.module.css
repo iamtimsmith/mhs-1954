@@ -1,0 +1,17 @@
+.header {
+  padding: 50px 0;
+}
+
+.navbar {
+  text-align: center;
+}
+
+.navbar a {
+  padding: 1rem;
+}
+
+@media print {
+  .header {
+    display: none;
+  }
+}
