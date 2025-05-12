@@ -1,0 +1,20 @@
+.dialog {
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--color-bg);
+  box-shadow: 0rem 0.25rem 0.25rem
+    color-mix(in srgb, var(--color-text), transparent 80%);
+  max-height: calc(100% - 4rem);
+  max-width: 36rem;
+  min-width: 20rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.dialog::backdrop {
+  background: var(--color-text);
+  opacity: 0.5;
+}

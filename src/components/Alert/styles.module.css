@@ -1,0 +1,14 @@
+.alert {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alert.error {
+  background-color: var(--alert-error-bg);
+  color: var(--color-bg);
+}
+
+.alert.success {
+  background-color: var(--alert-success-bg);
+  color: var(--color-bg);
+}

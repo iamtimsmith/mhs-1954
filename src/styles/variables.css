@@ -1,4 +1,9 @@
 :root {
+  --alert-error-bg: #600000;
+  --alert-error-text: #800000;
+  --alert-success-bg: #004200;
+  --alert-success-text: #006400;
+
   --color-bg: #ffffff;
   --color-text: #000000;
   --color-accent: #800000;

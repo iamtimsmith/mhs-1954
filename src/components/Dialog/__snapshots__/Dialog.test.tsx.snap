@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dialog/> renders html unchanged 1`] = `
+<dialog
+  class="dialog"
+  open=""
+/>
+`;

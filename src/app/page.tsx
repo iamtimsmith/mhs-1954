@@ -1,4 +1,4 @@
-const Homepage = () => {
+const HomePage = () => {
   return (
     <>
       <h1>Newsletter Email Tool</h1>
@@ -55,4 +55,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;
